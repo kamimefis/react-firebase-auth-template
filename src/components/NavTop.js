@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -8,6 +9,7 @@ import LockIcon from '@material-ui/icons/Lock';
 import MenuIcon from '@material-ui/icons/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
+import {firebase} from '../firebase'
 
 const useStyles = makeStyles((theme) => ({
     root: { flexGrow: 1 },
@@ -21,6 +23,14 @@ const NavTop = () => {
     const open = Boolean(anchorEl);
     const handleMenu = (event) => setAnchorEl(event.currentTarget);
     const handleClose = () => setAnchorEl(null);
+
+    const singOutUser = () => {
+        firebase.auth().signOut().then(() => {
+            // Sign-out successful.
+        }).catch(function (error) {
+            // An error happened.
+        })
+    };
 
     return (
         <div className={classes.root}>
@@ -41,7 +51,7 @@ const NavTop = () => {
                             open={open}
                             onClose={handleClose}
                         >
-                            <MenuItem>
+                            <MenuItem component={Link} to="/" onClick={() => singOutUser()}>
                                 <IconButton aria-label="logout" className={classes.items}>
                                     <LockIcon style={{ color: '#ab12a7' }} />
                                 </IconButton>&nbsp;Cerrar sesión

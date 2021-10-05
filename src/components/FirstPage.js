@@ -2,9 +2,9 @@ import React from 'react'
 
 const FirstPage = () => {
     return (
-        <div>
+        <>
             First content
-        </div>
+        </>
     )
 }
 

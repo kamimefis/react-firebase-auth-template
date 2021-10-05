@@ -1,6 +1,6 @@
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-import 'firebase/compat/firestore';
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+import 'firebase/auth';
 
 const firebaseConfig = {
     //YOUR CREDENTIALS
@@ -8,8 +8,9 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-const auth = firebase.auth()
+const auth = firebase.auth();
+const firestore = firebase.firestore();
 
-export {auth, firebase}
+export { firebase, auth, firestore };
 
 
