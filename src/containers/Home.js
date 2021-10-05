@@ -25,7 +25,7 @@ const Home = () => {
         fetchUser()
     }, [])
 
-    console.log(user, 'user!');
+    // console.log(user, 'user!');
     return (
         <>
             {loggedin ? <NavTop /> : null}

@@ -1,9 +1,10 @@
 import React from 'react'
 
-const ThirdPage = () => {
+const ThirdPage = ({user}) => {
+    console.log(user, 'from 3°');
     return (
         <>
-            Third Content!
+            Third!
         </>
     )
 }
