@@ -21,8 +21,6 @@ Navigate through pages by bottom-nav
 * react-firebaseui
 * react router
 * react router dom
-* react-redux
-* redux-thunk
 * material-ui
 * react-firebaseui-localized (to change firebaseui language easily)
 

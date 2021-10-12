@@ -45,7 +45,7 @@ const Dashboard = ({ user, loading, loggedin }) => {
                 //     email: user.email,
 
                 // }, { merge: true });
-                // return true;
+                return true;
             },
             signInFailure: function (error) {
                 //console.log(error)
